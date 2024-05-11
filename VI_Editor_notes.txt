@@ -1,0 +1,73 @@
+nodes in vi editor (2 modes are there)
+1) Command mode (by default)
+2) insert mode (as like notepad )
+
+
+steps :
+1) cmd mode to insert mode -> insert(i)
+2)insert mode to cmd mode -> esc 
+
+i -> insert
+first we need to exit insert mode use esc to save file.
+- save file -> :wq  (save and quit)
+-  :w   -> save file
+-  :q   -> quit
+-  :wq    -> save and quit
+-  :wq file2.txt -> copy file into file2.txt
+-  :q!  -> dont save and quit
+------------------------------------------
+Insert mode :
+
+i -> Insert mode
+I -> Start typing from the current line
+a -> Start typin after the current character
+A -> Start typing at the end of current line
+o -> start typing on new line after current line
+O -> start typing on new line before current line
+---------------------------------------------
+Navigational Commands :
+shift + G  -> go down of file (at the bootm of file)
+gg         -> to go top of file
+:set nu    -> to see line number
+---------------------------------------------
+Delete command
+x  -> Deleting current character
+X  -> Delete the character before the cursor
+dd -> delete current line
+dg -> delete from current line to end of the line
+D  ->  delete from current cursor to end of the line
+u  -> use to undo changes
+----------------------------------------------
+Copy paste Commands
+:yy -> copy the lines
+:p  -> after the current line
+:P  -> before the current line
+-----------------------------------------------
+search string
+1) forward search  :  /string  (command for forward search)
+2) backword search :  ?string  (command for backword search)
+
+n -> used to navigate
+------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
