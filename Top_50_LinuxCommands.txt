@@ -1,0 +1,201 @@
+https://www.digitalocean.com/community/tutorials/linux-commands 
+
+In Above Link you find all 50 commands
+
+1) ls : The most frequently used command in Linux to list directories
+2) pwd : Gives working directory location
+3) cd : Change directories 
+4) mkdir : make directories
+   mkdir <directory_name>
+5) cp  : copy file 
+   cp <source> <Destination>
+6) mv  : move file
+   mv <source> <Destination>
+7) rm : used to delete files and folder 
+   rm <file-name>
+Note : To delete directory use must use -r 
+   rm -r <directory_name>
+Note : It’s a good idea to use the -i flag in conjunction with the -r flag, which will prompt you for confirmation before deleting each file and directory.
+   rm -ri <directory_name>
+8) touch : create an empty file 
+   touch <fileName>
+9) ln : To create a link to another file, we use the ln command.
+   ln -s <source path> <link name>
+   (The -s flag creates a symbolic link (also known as a symlink or soft link) to a file or directory. A symbolic link is a special type of file that acts as
+    a shortcut or pointer to another file or directory.)
+10) clear : clear the scrren 
+  clear 
+  ls -l ; clear
+11) -> cat : the cat command, when used on our New-File, prints the contents of the file.
+       cat <filename>
+    
+    -> echo : hen we use echo command, it simply prints whatever follows after the command.
+       echo "<message_wants_to_print>"
+    
+    -> less : The less command is used when the output printed by any command is larger than the screen space and needs scrolling. The less command allows the user to break down the output and scroll through it with the use of the enter or space keys.
+            The simple way to do this is with the use of the pipe operator (|).
+       
+        cat <file> | less
+Note : why we used | operator ?
+    -> This allows you to create chains of commands where the output of one command becomes the input of the next, enabling powerful and flexible data processing and manipulation.
+12) man : The man command in Linux is used to display the manual page for a specific command. It provides detailed information about the command, including its syntax, options, and examples.
+   man ls
+13) -> uname : The uname command in Linux displays information about the system’s kernel, including the kernel name, hostname, kernel release, kernel version, and machine hardware name.
+       uname -A
+  [ex :
+   uname -a
+    MINGW64_NT-10.0-22621 NEW1067-G7 3.4.7-ea781829.x86_64 2023-07-05 12:05 UTC x86_64 Msys
+  ]
+
+    -> whoami : The whoami command in Linux returns the current user’s username
+     whoami
+ 14) -> tar : The tar command in Linux is used to create and extract archived files. We can extract multiple different archive files using the tar command.
+      #Compress
+        root@ubuntu:~# tar -cvf <archive name> <files separated by space>
+      #Extract
+        root@ubuntu:~# tar -xvf <archive name>
+15) -> zip :  To create zip file/archive
+      zip <archive name> <file names separated by space>
+    -> unzip : To unzip files/archive
+        unzip <archive name>
+16) grep : The grep command is a powerful and versatile text search tool in Linux and Unix-based operating systems. It can search for specific patterns or strings in one or more files and filter the output of other commands.
+    The grep command stands for “global regular expression print,” which reflects its ability to search for regular expressions across multiple lines and files.
+    To learn more about grep :  https://www.digitalocean.com/community/tutorials/grep-command-in-linux-unix
+   
+    <Any command with output> | grep "<string to find>"
+    cat ajju.txt | grep --color "Ajju"
+    (--color is used to higlight particular string)
+
+17) head -> the head command showed 10 lines from the top of the file.
+    head <file name>
+
+    tail -> tail command outputted the bottom 10 lines from the file.
+
+    tail <File name>
+
+18) The diff, comm, and cmp commands are all used to compare files in Linux and Unix-based operating systems. These commands can be used to identify differences between two files, merge changes, and perform other file comparison tasks.
+    diff -> 
+    diff <file 1> <file 2>
+    cmp -> The cmp command is used to compare two files and display the first byte that is different between them. It can be used to identify differences between binary files or to check for corruption in files.
+    cmp <file 1> <file 2>
+19) comm -> The comm command is used to compare two sorted files and display the lines that are unique to each file, as well as the lines that are common to both files.
+    comm <file 1> <file2>
+20) sort -> The sort command is used to sort lines in a text file or standard input in Linux and Unix-based operating systems. 
+    sort <filename>
+    sort -n file.txt -> sort lines in numeric order
+21) export -> The export command in Linux and Unix-based operating systems is used to set environment variables.
+    export <variable name>=<value>
+22) ssh -> The ssh command in Linux and Unix-based operating systems establishes a secure shell connection to a remote server. The command provides a secure encrypted connection between the local and remote servers, allowing users to run commands and transfer files securely.
+    ssh username@remote-server
+23) service -> The service command in Linux is used to manage system services, which are long-running processes that are started at boot time and run in the background. These services are responsible for providing various system functionalities, such as networking, database management, and user authentication.
+root@ubuntu:~ service ssh status
+root@ubuntu:~ service ssh stop
+root@ubuntu:~ service ssh start
+24) The ps, kill, and killall commands : all used to manage processes in Linux.
+   ps -> The ps command is used to display information about the current running processes on the system.
+   ps -ef (Display a list of all running processes:)
+   ps -p PID (Display a list of all processes for a specific process ID (PID))
+
+   kill -> to kill a process with the kill command, 
+   kill <PID>
+   But if you do not know the process ID and just want to kill the process with the name, you can make use of the killall command.
+
+25) df and mount command
+  df -> The df command is used to display the amount of disk space used and available on the file systems, 
+  mount -> mount command is used to mount a file system or device to a specific directory.
+  When we say mount, it means that we’ll connect the device to a folder so we can access the files from our filesystem. 
+
+  root@ubuntu:~ mount /dev/cdrom /mnt
+  root@ubuntu:~ df -h
+
+26) chmod and chown commands : The chmod and chown commands are used to modify file permissions and ownership in Linux.
+   chmod -> The chmod command is used to change the permissions of a file or directory,
+   chown ->  chown command is used to change the ownership of a file or directory
+   root@ubuntu:~ chmod +x loop.sh
+  root@ubuntu:~ chmod root:root loop.sh
+
+26) The ifconfig and traceroute commands : 
+The ifconfig and traceroute commands manage network interfaces and trace the route of network packets in Linux.
+- The ifconfig command will give you the list of all the network interfaces along with the IP addresses, MAC addresses and other information about the interface.
+root@ubuntu:~ ifconfig
+- The traceroute command is used to trace the route of network packets and determine the path they take to reach a specific destination.
+traceroute <destination address>
+
+27) wget -> If you want to download a file from within the terminal, the wget command is one of the handiest command-line utilities available. 
+wget <link to file>
+wget -c <link to file> ( -c argument allows us to resume an interrupted download.)
+
+28) The ufw and iptables commands: The ufw and iptables commands are used to manage firewalls in Linux.
+
+root@ubuntu:~# iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+root@ubuntu:~# ufw allow 80
+29) Package Managers in Linux: 
+Debian and Debian-based distros - apt install <package name>
+Arch and Arch-based distros - pacman -S <package name>
+Red Hat and Red Hat-based distros - yum install <package name>
+Fedora and CentOS - yum install <package>
+
+30) sudo -> This command is equivalent to logging in as root (based on what permissions you have as a sudoer).
+This command is equivalent to logging in as root (based on
+ what permissions you have as a sudoer).
+31) cal  ->  cal command displays a well-presented calendar on the terminal.
+cal
+32) alias -> What’s an alias? In simple terms, it’s another name for a command that you’ve defined
+root@ubuntu:~# alias lsl="ls -l"
+OR
+root@ubuntu:~# alias rmd="rm -r"
+33) dd -> This command was created to convert and copy files from multiple file system formats. In the current day, the command is simply used to create bootable USB for Linux but there still are some things important you can do with the command.
+root@ubuntu:~# dd if=/dev/sdb of=/dev/sda
+The if and of arguments stand for input file and output file.
+
+34) The whereis and whatis commands : The whereis and whatis commands are used in Linux to search for information about programs and files.
+whereis sudo
+whatis sudo
+
+35) top -> The top command in Linux is a system monitoring tool that displays real-time information about system processes and resource usage. It provides a dynamic, real-time view of system activity, including CPU usage, memory usage, and process information.
+Sort processes by memory usage:  top -o MEM
+Display detailed information about a specific process: top -p PID
+Display a summary of system resource usage:top -n 1
+36) The useradd and usermod commands: The useradd and usermod commands are used in Linux to manage user accounts.
+root@ubuntu:~# useradd JournalDev -d /home/JD
+root@ubuntu:~# usermod JournalDev -a -G sudo, audio, mysql
+Here are some examples of using the passwd command:
+
+Change the password for the current user:
+root@ubuntu:~# passwd
+This will prompt you to enter a new password for the current user.
+
+Change the password for a specific user:
+root@ubuntu:~# passwd username
+Replace username with the name of the user whose password you want to change.
+
+Force a user to change their password at the next login: root@ubuntu:~# passwd -f username
+Set an expiration date for a user’s password: root@ubuntu:~# passwd -e -n days -w warndays username
+Replace days with the number of days before the password expires and warm days with the number of days before the password expires that the user will be warned.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
